@@ -1,3 +1,9 @@
+function defaultDice() {
+  var imgage = "images/dice6.png";
+  document.querySelectorAll("img").setAttribute("src", image);
+}
+defaultDice();
+
 function diceGame() {
   //First Dice
 
@@ -16,14 +22,14 @@ function diceGame() {
   document.querySelectorAll("img")[1].setAttribute("src", randomDice2);
 
   //Result
-
+  document.querySelector("button").innerHTML = "Play Dice!";
   if (randomNumber1 > randomNumber2) {
-    document.querySelector("h1").innerHTML = "Player 1 wins";
-  } else if (randomNumber1 < randomNumber2) {
-    document.querySelector("h1").innerHTML = "Player 2 wins";
+    document.querySelector("h1").innerHTML = '<i class="fas fa-flag"></i> Player 1 wins';
+  }
+  else if (randomNumber1 < randomNumber2) {
+    document.querySelector("h1").innerHTML = 'Player 2 wins <i class="fas fa-flag"></i>';
   } else {
     document.querySelector("h1").innerHTML = "Draw!";
+    document.querySelector("button").innerHTML = "Play Again!";
   }
 }
-
-diceGame();
